@@ -55,7 +55,7 @@ class CuadroController extends Controller
      */
     public function show($id)
     {
-        //
+        return Cuadro::find($id);
     }
 
     /**
@@ -78,7 +78,9 @@ class CuadroController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cuadro = Cuadro::find($id);
+        $cuadro->update($request->all());
+        return $cuadro;
     }
 
     /**
@@ -89,6 +91,6 @@ class CuadroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Cuadro::destroy($id);
     }
 }
